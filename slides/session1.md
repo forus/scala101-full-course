@@ -6,7 +6,7 @@ val name = "Hello World"
 val age = 10
 println(s"$name, we are $age years old")
 println("Bye now")
-
+if (a >= b) println("a is not less than b")
 // some comments
 // more comments
 ```
