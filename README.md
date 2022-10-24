@@ -1,5 +1,11 @@
 # Scala 101 - an introduction to Scala, SBT, and ScalaTest
 
+To see the slides:
+* open a command line
+* `cd` to the slides folder
+* `python3 -m http.server`
+* Open a browser tab and navigate to `localhost:8000`
+
 
 
 ## More resources
