@@ -1,3 +1,12 @@
+# Scala 101 - Introduction Training
+## Session 1
+- Cleaner Java
+- Object-oriented programming
+- Tools
+  - SBT
+  - ScalaTest
+- Scala Collections
+--
 ## Main slide
 
 ## With code :)
