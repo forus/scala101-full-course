@@ -8,9 +8,7 @@
 - Scala Collections
 --
 ## Main slide
-CASE CLASS
-
-![Sample image](/scala101/images/allthethings.png) ALL THE THINGS
+![Sample image](/scala101/images/ccatt.png)
 ## With code :)
 ```scala [1-2|3-4|6]
 val name = "Hello World"
