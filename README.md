@@ -6,7 +6,8 @@ To see the slides:
 * `python3 -m http.server`
 * Open a browser tab and navigate to `localhost:8000`
 
-
+When working on the slides, make sure you disable cache in your browser and reload the slides whenever you saved changes, otherwise
+you may not see the most recent version of the slides.
 
 ## More resources
 * https://docs.scala-lang.org/overviews/collections/performance-characteristics.html
