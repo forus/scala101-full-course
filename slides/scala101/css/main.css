@@ -1,0 +1,13 @@
+code {
+    color: #73e7db;
+    background: #272822;
+}
+
+.reveal ol,
+.reveal ul {
+    display: block;
+}
+
+.reveal p {
+    text-align: left;
+}
