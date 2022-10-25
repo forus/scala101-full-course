@@ -8,18 +8,21 @@
 - Scala Collections
 --
 ## Main slide
-![Sample image](/scala101/images/ccatt.png)
+<img src="/scala101/images/ccatt.png" style="width:200px;"/>
+
 ## With code :)
-```scala [1-2|3-4|6]
+```scala [1-2|3-4|7]
 val name = "Hello World"
 val age = 10
 println(s"$name, we are $age years old")
 println("Bye now")
-if (a >= b) println("a is not less than b")
+
 // some comments
+if (a >= b) println("a is not less than b")
 // more comments
 ```
-![Exercise](/scala101/images/exercise.png)
+--
+<img src="/scala101/images/exercise.png" style="width:100px;"/>
 --
 detail slide
 ## header
