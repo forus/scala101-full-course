@@ -358,6 +358,77 @@ val circle = new Circle(1.0)
 println(circle.area)
 ```
 <!-- .element: class="fragment" -->
+==
+## Sub Classes
+Body of the class definition is the constructor
+```scala
+class Circle(val r: Double) extends Shape(Math.PI * r * r) {
+  require(r > 0)
+}
+val circle = new Circle(-1.0) // throws!
+```
+==
+## Methods
+You can use imperative style and functional style
+
+```scala
+class Circle(val r: Double) {
+  // imperative style
+  def circumference: Double = {
+    return 2 * Math.PI * r
+  }
+  
+  // is equivalent to functional style 
+  def circumference: Double = 2 * Math.PI * r	
+}
+```
+
+==
+## Methods
+```scala
+class Circle(val r: Double) {
+  
+  def draw(c: Canvas): Unit = {
+    val box = determineBoundingBox // draw using box
+
+    private def determineBoundingBox = new Rectangle(2 * r, 2 * r)
+  }
+```
+
+notes: Unit in Scala is same as void in Java <br/>
+Definitions are public by default, you can add private <br/>
+Return types are optional (but recommended for public members)
+
+==
+## A note about style
+* Avoid using explicit return statements
+* Always provide a return type for public `def`s
+
+==
+## Named parameters
+* When calling methods or creating objects, you can explicitly assign to the parameters
+* By using the name of the parameter, you are no longer restricted in the order of the arguments
+* Very useful for methods with a lot of parameters (that have default values)
+
+```scala
+def createQueue( durable: Boolean, exclusive: Boolean, autoAcknowledge: Boolean) = ???
+
+val queue = createQueue(true, false, false) // what do these mean
+
+val queue2 = createQueue( autoAcknowledge = false, exclusive = false, durable = true) // now it is clear
+
+```
+<!-- .element: class="fragment"-->
+IDE's will help you these days (with parameter hints), but we should not rely on those features too much
+<!-- .element: class="fragment"-->
+
+==
+## Default parameters
+```scala
+def createQueue( durable: Boolean, exclusive: Boolean, autoAcknowledge: Boolean = true) = ???
+
+val queue = createQueue(true, false) // uses default value for autoAcknowledge
+```
 
 ===
 ## Type hierarchy

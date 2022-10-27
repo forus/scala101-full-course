@@ -1,8 +1,12 @@
 code {
-    color: #73e7db;
+    color: #a6e22e;
     background: #272822;
+    font-weight: bold;
 }
 
+pre code {
+    font-weight: normal;
+}
 .reveal ol,
 .reveal ul {
     display: block;
