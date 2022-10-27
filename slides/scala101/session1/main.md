@@ -1,4 +1,7 @@
+<!-- .slide: data-background-color="#6a1520" -->
 # Scala 101 - Introduction Training
+## Session 1
+
 ===
 ## Welcome
 - experience and expectations
@@ -78,8 +81,9 @@ Paradigm shift: there are multiple ways to get things done. This makes it harder
 </aside>
 
 ===
+<!-- .slide: data-background-color="#6a1520" -->
 ## Scala 101 - Module 1
-A cleaner Java
+### A cleaner Java
 
 ==
 ## Look mama, no semicolons
@@ -215,14 +219,16 @@ dates.add(new LocalDate(2022, 10, 25)) // Correct
 ```
 
 ===
+
 ## Symbolic methods
+
 Symbols can be powerful conveyors of meaning when used appropriately.
 
 ```scala
 val s = "Hello"
 val t = "world"
 
-// Don't use this Java style
+// Do not use this Java style
 val same = s.equals(t)
 val hash = s.hashCode
 
@@ -233,6 +239,7 @@ val hash = s.##
 
 ==
 ## Symbolic methods
+
 Scala allows you to (re)define methods with symbols in their name
 
 ```scala
@@ -280,7 +287,8 @@ val todo = ???
 
 <img src="/scala101/images/dispatch.png" class="center" style="width:600px;"/>
 
-==
+===
+<!-- .slide: data-background-color="#002b00" -->
 <img src="/scala101/images/exercise.png" class="slideLabel"/>
 
 ## Excercise 1: the basics
@@ -290,9 +298,21 @@ val todo = ???
 * Press the green arrow to "run" the worksheet
 * Observe the results
 
+==
+<!-- .slide: data-background-color="#002b00" -->
+<img src="/scala101/images/exercise.png" class="slideLabel"/>
+
+## Extra
+* Open https://scala-lang.org/api/current
+* Find `RichInt.to`
+* What parameters does it accept?
+* What does it return?
+* What about `RichInt.until`?
+
 ===
+<!-- .slide: data-background-color="#6a1520" -->
 ## Scala 101 - Module 2
-Object-Oriented programming
+### Object-Oriented programming
 
 ==
 ## Classes
@@ -333,10 +353,12 @@ class Shape(val area: Double){
 <img src="/scala101/images/unified-types-diagram.svg" class="center"/>
 
 ===
+<!-- .slide: data-background-color="#6a1520" -->
 ## Scala 101 - Module 3
-Tools
+### Tools
 
 ===
+<!-- .slide: data-background-color="#6a1520" -->
 ## Scala 101 - Module 4
-Collections
+### Collections
 
