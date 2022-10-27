@@ -4,17 +4,17 @@
 
 ===
 ## Welcome
-- experience and expectations
-- objectives
+- Experience and expectations
+- Objectives
   - Scala syntax
   - Object-oriented concepts in Scala
   - Basics of functional programming
   - Using Scala's Collections
   - Working with SBT and ScalaTest
-<aside class="notes">
-Provide some background on experience<br/>
+
+Notes: Provide some background on experience<br/>
 Ask about audience experience and expectations
-</aside>
+
 ==
 ## Format of the training
 
@@ -56,11 +56,9 @@ Source: https://www.scala-lang.org/
 * Good support for Domain Specific Languages (DSLs)
 * All the things that Java is good at
 
-<aside class="notes">
-Due to the type safety, a compiling program is a strong indication of a correct program.<br/>
+notes: Due to the type safety, a compiling program is a strong indication of a correct program.<br/>
 Compared to untyped languages where you can pass an int when a string is expected. Scala does this even better than Java, where
 types are often lost and you are left with just an `Object`
-</aside>
 
 ==
 ## Scala's challenges
@@ -73,12 +71,10 @@ types are often lost and you are left with just an `Object`
 * Concurrency
   * Mutability is still possible
 
-<aside class="notes">
-Complexity: familiar does not imply easy<br/>
+notes: Complexity: familiar does not imply easy<br/>
 Type system: Some parts of the type system can be inaccessible. Usually this is no issue, unless you are developing a framework or library<br/>
 The type system is Turing Complete, which means it is very powerful but has caveats too.<br/>
 Paradigm shift: there are multiple ways to get things done. This makes it harder to learn the differences
-</aside>
 
 ===
 <!-- .slide: data-background-color="#6a1520" -->
@@ -167,12 +163,10 @@ dates.add( new LocalDate(1999, 12, 31))
 println(dates.size)
 ```
 
-<aside class="notes'>
-Ask audience what differences they spot<br/>
-No semicolons<br/>
-[] instead of <> for generics <br/>
-No () after new ArrayList<br/>
-</aside>
+notes: Ask audience what differences they spot<br/>
+1 No semicolons<br/>
+2 [] instead of <> for generics <br/>
+3 No () after new ArrayList<br/>
 
 ==
 ## A note about style
@@ -236,6 +230,7 @@ val hash = s.hashCode
 val same = s == t
 val hash = s.##
 ```
+notes: This is because equals and hashCode are defined on Object, which is AnyRef. If you compare primitives (AnyVal), the compiler will box it and call equals/hashCode on the Java wrapper object. If you use == or ##, it will call a method on AnyVal without having to box a primitive. For AnyRef, it will simply delegate to equals/hashCode. For consistency's sake, it's a convention to use == and ## everywhere—also Strings.
 
 ==
 ## Symbolic methods
@@ -314,11 +309,11 @@ val todo = ???
 ## Scala 101 - Module 2
 ### Object-Oriented programming
 
-==
+===
 ## Classes
 Initialiser values are private by default
 ```scala
-class Shape(area: Double){
+class Shape(area: Double) {
   // area is private
 }
 
@@ -329,7 +324,7 @@ val shape = new Shape(1.0)
 ## Classes
 Public members can be added
 ```scala
-class Shape(a: Double){
+class Shape(a: Double) {
   // a is private, area is public
   val area = a
 }
@@ -342,9 +337,25 @@ The `val` can also be used in the class definition:
 <!-- .element: class="fragment" --> 
 
 ```scala
-class Shape(val area: Double){
+class Shape(val area: Double) {
   // area is public
 }
+```
+<!-- .element: class="fragment" -->
+==
+## Sub Classes
+Scala has support for inheritance, allows you to create specialisations of a class
+```scala [5-10]
+class Shape(val area: Double) {
+  // area is public
+}
+
+class Circle(val r: Double) extends Shape(Math.PI * r * r) {
+  // ...
+}
+
+val circle = new Circle(1.0)
+println(circle.area)
 ```
 <!-- .element: class="fragment" -->
 
