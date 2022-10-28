@@ -4,8 +4,9 @@ code {
     font-weight: bold;
 }
 
-pre code {
+.reveal pre code {
     font-weight: normal;
+    max-height: 800px;
 }
 .reveal ol,
 .reveal ul {
@@ -16,15 +17,25 @@ pre code {
     text-align: left;
 }
 
-.center{
+.center {
     margin-left: auto;
     margin-right: auto;
 }
 
-.slideLabel{
+.slideLabel {
     margin-left: auto;
     margin-right: 10px;
     margin-top: 10px;
     float: right;
     width: 120px;
+}
+
+.colLeft {
+    float: left;
+    width: 50%;
+}
+
+.colRight {
+    float: right;
+    width: 50%;
 }
