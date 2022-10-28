@@ -228,5 +228,76 @@ def execute(sql: Sql): Result
 <img src="/scala101/images/ccatt.png" class="fragment colRight" style="width:600px;"/>
 
 ===
+## Singleton object
+* Similar to Java static methods
+
+```scala
+object Main {
+  def main(args: Array[String]): Unit = {
+    println("Hello world!")
+  }
+}
+```
+
+==
+## Singleton object
+* You could write Java-like code in Scala:
+
+```scala
+class Circle(val r: Double)
+
+object CircleFactory {
+  def create(r: Double): Circle = new Circle(r)
+}
+
+val c = CircleFactory.create(1.0)
+```
+
+==
+## Companion object
+* In Scala we do not like factory classes
+* Companion objects offer easy ways to create instances of a specific class
+* Companion objects *must* be in the same file as their class
+
+```scala[3]
+class Circle(val r: Double)
+
+object Circle { // notice that object uses the same name as the class
+  def create(r: Double): Circle = new Circle(r)
+}
+
+val c = Circle.create(1.0)
+
+```
+
+==
+## Apply method
+* An even more Scala-esque way is to use the `apply` method for object creation
+
+```scala[4]
+class Circle(val r: Double)
+
+object Circle {
+  def apply(r: Double): Circle = new Circle(r)
+}
+
+val c = Circle(1.0)
+
+```
+
+This `apply` method is automatically generated for case classes
+<!-- .element: class="fragment"-->
+
+==
+## A note about style
+* Do not overuse the `apply` method
+* Use it for factory methods in companion objects
+  * Provides a nice way to convert objects into other types
+* Use it when creating Domain Specific Languages
+
+===
+## Traits
+
+===
 ## Type hierarchy
 <img src="/scala101/images/unified-types-diagram.svg" class="center"/>
