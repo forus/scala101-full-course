@@ -224,6 +224,9 @@ case class Sql(s: String)
 def execute(sql: Sql): Result
 ```
 <!-- .element: class="fragment"-->
+
+<img src="/scala101/images/ccatt.png" class="fragment colRight" style="width:600px;"/>
+
 ===
 ## Type hierarchy
 <img src="/scala101/images/unified-types-diagram.svg" class="center"/>
