@@ -93,6 +93,8 @@ Definitions are public by default, you can add private <br/>
 Return types are optional (but recommended for public members)
 
 ==
+<img src="/scala101/images/do_dont.png" class="slideLabel"/>
+
 ## A note about style
 * Avoid using explicit return statements
 * Always provide a return type for public `def`s
@@ -150,7 +152,9 @@ public class Point {
     public String toString() {
         return "Point[x=" + x + ", y=" + y + "]";
     }
-}
+
+    
+    
 ```
 </div>
 <div class="colRight" data-markdown>
@@ -289,6 +293,8 @@ This `apply` method is automatically generated for case classes
 <!-- .element: class="fragment"-->
 
 ==
+<img src="/scala101/images/do_dont.png" class="slideLabel"/>
+
 ## A note about style
 * Do not overuse the `apply` method
 * Use it for factory methods in companion objects

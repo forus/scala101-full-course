@@ -90,6 +90,8 @@ notes: Ask audience what differences they spot<br/>
 3 No () after new ArrayList<br/>
 
 ==
+<img src="/scala101/images/do_dont.png" class="slideLabel"/>
+
 ## A note about style
 * Parentheses (`()`) can often be omitted
 * Convention is to
@@ -113,6 +115,8 @@ s contains "e"      // infix notation of same call
 ```
 
 ==
+<img src="/scala101/images/do_dont.png" class="slideLabel"/>
+
 ## A note about style
 * Never use infix notation for side-effecting calls
 
@@ -197,6 +201,8 @@ val todo = ???
 ```
 
 ==
+<img src="/scala101/images/do_dont.png" class="slideLabel"/>
+
 ## A note about style
 * Do not go overboard with inventing symbolic operators. It poses a strain on developers that need to learn the meaning
 * `x :-| y`
