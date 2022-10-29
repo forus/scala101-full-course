@@ -10,8 +10,8 @@ object Hamlet extends App {
 
   def toScreen(p: PrettyPrintable): Unit = ???
 
-  val shakespeare = Author("William", "Shakespeare")
-  val hamlet = Book("Hamlet", shakespeare, 1603)
+  //val shakespeare = Author("William", "Shakespeare")
+  //val hamlet = Book("Hamlet", shakespeare, 1603)
 
-  toScreen(hamlet)
+  //toScreen(hamlet)
 }

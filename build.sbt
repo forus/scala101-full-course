@@ -5,7 +5,8 @@ val projectVersion = "0.1"
 val scalaVer = "2.13.10"
 
 val scalaTestDependencies = Seq(
-  "org.scalatest" %% "scalatest" % "3.2.14" % "test"
+  "org.scalatest" %% "scalatest" % "3.2.14" % Test,
+  "org.scalatest" %% "scalatest-flatspec" % "3.2.14" % Test
 )
 
 lazy val appHamlet = project.settings(
