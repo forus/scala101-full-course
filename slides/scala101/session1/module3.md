@@ -150,7 +150,20 @@ Test names typically are long and hard to read, or short and unclear
 The solution in ScalaTest:
 
 ```scala
-test("2 ints added with + should be the sum of 2 ints"){ ... }
+// when using FunSuite 
+class exampleSpec extends AnyFunSuite with Matchers {
+  test("2 ints added with + should be the sum of 2 ints") {
+    2 + 2 shouldBe 4
+  }
+}
+
+// or, when using AnyFlatSpec:
+class exampleSpec extends AnyFlatSpec with Matchers {
+  "2 ints added with + " should "be the sum of 2 ints" in {
+    2 + 2 shouldBe 4
+  }
+}
+
 ```
 
 This also works well with test tooling showing the results:
@@ -164,4 +177,100 @@ sbt:Scala 101 Full Course> test
 ```
 
 <img src="/scala101/images/testresult.png" class="fragment colRight" style="width:600px;"/>
+
+==
+## ScalaTest
+* Assertions
+
+```scala
+
+class exampleSpec extends AnyFlatSpec with Matchers {
+  "2 ints added with + " should "be the sum of 2 ints" in {
+    2 + 2 should be (4)
+    2 + 2 shouldBe 4
+  }
+
+  "my HashMap" should "contain 1 as a key" in {
+    val map = HashMap((1 -> "a"), (2 -> "b"))
+
+    map should contain key 1
+  }
+}
+```
+==
+## ScalaTest
+* Testing Exceptions
+
+```scala
+class exampleSpec extends AnyFlatSpec with Matchers {
+
+  "division by 0" should "throw an exception" in {
+    intercept[ArithmeticException] {
+      1 / 0
+    }
+  }
+}
+```
+
+==
+## ScalaTest
+* There are many styles in which you can write tests
+* ScalaTest lets you choose your favourite style
+  * by mixing in Traits
+
+===
+## Trait mixins
+* Traits can be combined
+* Similar to multiple inheritance
+
+```scala
+trait A {
+  def doA(): Unit = println("a")
+}
+
+trait B {
+  def doB(): Unit = println("b")
+}
+
+class X extends A with B
+
+val x = new X
+x.doA()
+x.doB()
+
+```
+
+Note: the compiler will detect collisions in methods / vals with identical names
+
+===
+## Configure ScalaTest with Traits
+* `org.scalatest.funsuite.AnyFunSuite` gives you the `test` method
+* `org.scalatest.flatspec.AnyFlatSpec` gives you 
+  * `"something" should "behave like x" in `
+* `org.scalatest.matchers.should.Matchers` gives you 
+  * `[expr] should be ([expectation])`
+  * `[expr] shouldBe expectation`
+* and many more, see https://www.scalatest.org/user_guide/selecting_a_style
+
+==
+## FlatSpec details
+* Good fit to describe behavior of classes
+
+```scala
+class IntegerTest extends AnyFlatSpec with Matchers {
+  behavior of "Integer"
+  
+  it should "add 2 ints with +" in {
+    1 + 1 shouldBe 2
+  }
+}
+```
+
+==
+## Configure ScalaTest with Traits
+* ScalaTest also has `must` matchers that allow you to use `must` instead of `should`
+* `OneInstancePerTest` - to create a new instance of the class for each test case (like JUnit)
+* `BeforeAndAfter` - gives you methods to setup and tear down before each test
+* `BeforeAndAfterAll` - gives you methods to setup and tear down before the test suite
+* `MockitoSugar` - gives you syntactic sugar for calling Mockito
 
