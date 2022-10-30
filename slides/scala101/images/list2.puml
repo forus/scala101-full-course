@@ -1,0 +1,17 @@
+@startuml
+!theme cyborg
+'skinparam handwritten true
+skinparam backgroundColor transparent
+skinparam defaultFontSize 40
+rectangle 0
+rectangle 1
+rectangle 2
+rectangle 3
+
+xs -> 1
+1 -> 2
+2 -> 3
+
+ys -> 0
+0 -up-> 1
+@enduml

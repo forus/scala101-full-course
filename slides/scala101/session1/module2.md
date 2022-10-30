@@ -454,6 +454,7 @@ val regex2 = """.*@.*\.com""".r     // val regex2: scala.util.matching.Regex = .
 
 ===
 ## Type hierarchy
+
 <img src="/scala101/images/unified-types-diagram.svg" class="center"/>
 
 ===
