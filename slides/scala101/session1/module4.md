@@ -301,9 +301,95 @@ val res19: (Iterable[Int], Iterable[String])
 
 ## Excercise 3: Shakespeare
 
+Write code that takes the following input and produces the output listed below.
+
+```scala
+val phrase = "brevity is the soul of wit"
+```
+
+Target:
+```text
+(brevity,0)
+(is,1)
+(of,4)
+(soul,3)
+(the,2)
+(wit,5)
+```
+
+The words are sorted alphabetically, and show their position in the original string
+
+<span class="fragment" data-markdown>
+
+One possible solution:
+
+```scala
+phrase.split(" ").zipWithIndex.sorted.mkString("\n")
+```
+</span>
+
 ===
 <!-- .slide: data-background-color="#002b00" -->
 <img src="/scala101/images/exercise.png" class="slideLabel"/>
 
 ## Excercise 4: todo.txt
 
+* The assignment: write some unit tests for todo.txt
+  * Source code available in module `appTodo`
+  * The readme (`appTodo/README.md`) has a link to the format specification
+* Hints
+  * Add ScalaTest to SBT
+  * Use the parser like this:
+
+```scala
+val input = "(A) Call mom"
+val parser = TodoParser(input)
+val task: Try[Task] = parser.task.run()
+```
+
+* Try is like Option:
+  * `if (task.isSuccess) println(task.get) else println(":(")`
+
+==
+<!-- .slide: data-background-color="#002b00" -->
+<img src="/scala101/images/exercise.png" class="slideLabel"/>
+
+## Excercise 4: todo.txt
+For example
+
+```scala
+import todo.TodoParser
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
+
+class TaskTest extends AnyFlatSpec with Matchers {
+  it should "parse a simple task" in {
+    val task = parse("(A) Call mom")
+    
+    task.isSuccess shouldBe true
+    task.get.priority shouldBe Some("A")
+    task.get.description shouldBe Some("Call mom")
+  }
+  
+  private def parse(input: String) = {
+    val parser = TodoParser(input)
+    parser.task.run()
+  }
+}
+
+```
+
+==
+<!-- .slide: data-background-color="#002b00" -->
+<img src="/scala101/images/exercise.png" class="slideLabel"/>
+
+## Excercise 4: todo.txt
+* Note
+  * For a single task: `parser.task.run()`
+  * For a list of tasks, separated by newlines: `parser.tasks.run()`
+* This is homework
+  * We'll discuss it in the next session
+* If you get stuck
+  * Google is your friend
+  * The instructor(s) - and your teammates - are your friend
+    * you can contact them
