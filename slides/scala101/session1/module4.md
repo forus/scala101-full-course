@@ -126,3 +126,184 @@ val res19: List[Int] = List(1, 2, 3, 4)
 </div>
 
 Note: List is also useful for pattern matching and recursive processing
+
+===
+## Collections
+* `List` is not the only collection
+
+<div class="r-stack">
+  <img src="/scala101/images/collections-diagram-213.svg" class="fragment current-visible">
+  <img src="/scala101/images/collections-immutable-diagram-213.svg" class="center fragment fade-in-then-out">
+  <img src="/scala101/images/collections-mutable-diagram-213.svg" class="center fragment fade-in">
+</div>
+
+
+<img src="/scala101/images/collections-legend-diagram.svg">
+
+* Images from https://docs.scala-lang.org/overviews/collections-2.13/overview.html
+
+==
+## Collections
+Scala defines several collection classes:
+
+* Base Traits
+  * `Iterable` (collections you can iterate on)
+  * `Seq` (ordered sequences)
+  * `Set` (unordered without duplicates)
+  * `Map` (lookup data structure)
+* Immutable Collections
+  * `List` (linked list, provides fast sequential access)
+  * `Stream` (same as List, except that the tail is evaluated only on demand)
+  * `Vector` (array-like type, implemented as tree of blocks, provides fast random access)
+  * `Range` (ordered sequence of integers with equal spacing)
+  * `String` (Java type, implicitly converted to a character sequence, so you can treat every string like a `Seq[Char]`)
+  * `Map` (collection that maps keys to values)
+  * `Set` (collection without duplicate elements)
+
+==
+## Collections
+Scala defines several collection classes:
+
+* Mutable Collections
+  * `Array` (Scala arrays are native JVM arrays at runtime, therefore they are very performant)
+  * Scala also has mutable maps and sets
+<br>
+<br>
+<div class="fragment" data-markdown>
+
+Be aware: the *contents* of a Scala Array is mutable, even if you declare a `val ar: Array[Int] = ???`
+</div>
+
+==
+<img src="/scala101/images/do_dont.png" class="slideLabel"/>
+
+## A note about style
+* Consider `List`
+  * for pattern matching
+  * for recursion
+* Consider `Vector`
+  * If you need to index elements
+  * It is like Java's `ArrayList` (*NOT* like Java's `Vector`)
+
+==
+<img src="/scala101/images/do_dont.png" class="slideLabel"/>
+
+## Collection performance characteristics
+* https://docs.scala-lang.org/overviews/collections-2.13/performance-characteristics.html
+
+<div class="r-stack">
+  <img src="/scala101/images/performance-sequence.png" class="fragment current-visible">
+  <img src="/scala101/images/performance-set-map.png" class="center fragment fade-in-then-out">
+  <img src="/scala101/images/performance-operations.png" class="center fragment fade-in-then-out">
+  <img src="/scala101/images/performance-operations2.png" class="center fragment fade-in">
+</div>
+
+<img src="/scala101/images/performance-legend.png" width="400px">
+
+===
+## Sets
+* An unordered collection of items, without duplicates
+
+<div class="colLeft" data-markdown>
+
+```scala
+import scala.collection.immutable.SortedSet
+
+val s = Set(3, 1, 2, 1)
+val t = SortedSet(3, 5, 4)
+
+t + 42
+t - 3
+
+t.size
+t.isEmpty
+t contains 5
+
+t intersect s
+t union s
+t diff s 
+```
+</div>
+<div class="fragment colRight" data-markdown>
+
+```text
+import scala.collection.immutable.SortedSet
+
+val s: Set[Int] = Set(3, 1, 2)
+val t: SortedSet[Int] = TreeSet(3, 4, 5)
+
+val res0: SortedSet[Int] = TreeSet(3, 4, 5, 42)
+val res1: SortedSet[Int] = TreeSet(4, 5)
+
+val res2: Int = 3
+val res3: Boolean = false
+val res4: Boolean = true
+
+val res5: SortedSet[Int] = TreeSet(3)
+val res6: SortedSet[Int] = TreeSet(1, 2, 3, 4, 5)
+val res7: SortedSet[Int] = TreeSet(4, 5)
+```
+</div>
+
+===
+## Maps
+* Collection to store Key-Value pairs
+
+<div class="colLeft" data-markdown>
+
+```scala
+val m = Map(1 -> "a", 2 -> "b", 3 -> "c")
+
+m + (4 -> "d")
+m - 1
+m.updated(3, "newValue")
+
+m(2)
+m(5)
+m.get(2)
+m.get(5)
+m.getOrElse(5, "WTF")
+
+m.isEmpty
+m contains 5
+
+m.keys
+m.unzip
+```
+</div>
+<div class="fragment colRight" data-markdown>
+
+```text
+val m: Map[Int,String] = Map(1 -> a, 2 -> b, 3 -> c)
+
+val res8: Map[Int,String] = Map(1 -> a, 2 -> b, 3 -> c, 4 -> d)
+val res9: Map[Int,String] = Map(2 -> b, 3 -> c)
+val res10: Map[Int,String] = Map(1 -> a, 2 -> b, 3 -> newValue)
+
+val res11: String = b
+java.util.NoSuchElementException: key not found: 5
+val res13: Option[String] = Some(b)
+val res14: Option[String] = None
+val res15: String = WTF
+
+val res16: Boolean = false
+val res17: Boolean = false
+
+val res18: Iterable[Int] = Set(1, 2, 3)
+val res19: (Iterable[Int], Iterable[String])
+ = (List(1, 2, 3),List(a, b, c))
+```
+</div>
+
+===
+<!-- .slide: data-background-color="#002b00" -->
+<img src="/scala101/images/exercise.png" class="slideLabel"/>
+
+## Excercise 3: Shakespeare
+
+===
+<!-- .slide: data-background-color="#002b00" -->
+<img src="/scala101/images/exercise.png" class="slideLabel"/>
+
+## Excercise 4: todo.txt
+

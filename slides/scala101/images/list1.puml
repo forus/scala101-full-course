@@ -1,13 +1,12 @@
 @startuml
-!theme cyborg
-'skinparam handwritten true
-skinparam backgroundColor transparent
-skinparam defaultFontSize 40
-rectangle 1
-rectangle 2
-rectangle 3
+  !include ./pumlstyle.iuml
 
-xs -> 1
-1 -> 2
-2 -> 3
+  rectangle 1
+  rectangle 2
+  rectangle 3
+
+  xs -> 1
+  1 -> 2
+  2 -> 3
+
 @enduml
