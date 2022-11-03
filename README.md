@@ -11,6 +11,7 @@ you may not see the most recent version of the slides.
 
 ## More resources
 * https://docs.scala-lang.org/overviews/collections/performance-characteristics.html
+* https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/ - highly recommended beginners training
 * https://www.coursera.org/specializations/scala - 4 courses that teach you how to become a Scala developer and use Spark to perform
   big data analysis
 * ...
