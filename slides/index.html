@@ -41,15 +41,17 @@
                  data-separator="^==="
                  data-separator-vertical="^=="
         ></section>
-        <section>Slide 1</section>
-        <section>Slide 2
-            <aside class="notes">
-                <p>Some notes</p>
-            </aside>
-            <p>Some slide text</p>
-            <aside class="notes">
-                <p>and some more notes</p>
-            </aside>
+        <section data-markdown="scala101/session2/module5.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+        <section data-markdown="scala101/session2/module6.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+        <section data-markdown>
+            ## The end
+            ### Questions?
         </section>
     </div>
 </div>
@@ -59,6 +61,7 @@
 <script src="plugin/notes/notes.js"></script>
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
+<script src="plugin/math/math.js"></script>
 <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -71,7 +74,7 @@
         maxScale: 4,
         center: false,
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [ RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes ]
+        plugins: [ RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
     });
 
     // based on https://github.com/hakimel/reveal.js/issues/1211

@@ -13,10 +13,3 @@
 ## Homework - exercise 4 
 * Questions/remarks
 * Showcase solutions
-
-===
-<!-- .slide: data-background-color="#6a1520" -->
-## Module 5 - Functional Programming
-
-===
-## Why Functional Programming?
