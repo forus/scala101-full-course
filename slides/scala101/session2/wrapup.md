@@ -3,6 +3,7 @@
 
 ===
 ## Resources for further study
+
 * Twitter's Scala School
   * http://twitter.github.io/scala_school/
 
@@ -11,6 +12,8 @@
 
 * Book: Functional Programming in Scala
   * https://www.manning.com/books/functional-programming-in-scala
+
+<img src="/scala101/images/underscoretraining.png" class="colRight" style="width:400px;"/>
 
 * Underscore.io - free eBooks
   * https://underscore.io/training/
