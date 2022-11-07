@@ -16,15 +16,6 @@ you may not see the most recent version of the slides.
   big data analysis
 * ...
 
-## To do (remove section before merging to main)
-
-- [x] set up modules for exercises, todo app, shakespeare app
-- [ ] set up presentation (reveal.js)
-- [ ] add license
-- [ ] add resources for further study
-- [x] done 
-
-
 ## Working on the slides
 To make authoring the documentation easy, you should add some plugins and setup to IntelliJ. This will help working
 with PlantUML diagrams (you see live results on diagram edits in IntelliJ, and a File Watcher takes care of updating
