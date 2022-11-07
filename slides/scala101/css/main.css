@@ -1,0 +1,41 @@
+code {
+    color: #a6e22e;
+    background: #272822;
+    font-weight: bold;
+}
+
+.reveal pre code {
+    font-weight: normal;
+    max-height: 800px;
+}
+.reveal ol,
+.reveal ul {
+    display: block;
+}
+
+.reveal p {
+    text-align: left;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slideLabel {
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: right;
+    width: 120px;
+}
+
+.colLeft {
+    float: left;
+    width: 50%;
+}
+
+.colRight {
+    float: right;
+    width: 50%;
+}

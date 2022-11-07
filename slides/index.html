@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Scala 101 Full Course</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/moon.css">
+    <link rel="stylesheet" href="scala101/css/main.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section data-markdown="scala101/session1/main.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+        <section data-markdown="scala101/session1/module1.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+        <section data-markdown="scala101/session1/module2.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+        <section data-markdown="scala101/session1/module3.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+        <section data-markdown="scala101/session1/module4.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+        <section data-markdown="scala101/session2/main.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+        <section data-markdown="scala101/session2/module5.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+        <section data-markdown="scala101/session2/module6.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+        <section data-markdown="scala101/session2/module7.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+        <section data-markdown="scala101/session2/wrapup.md"
+                 data-separator="^==="
+                 data-separator-vertical="^=="
+        ></section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/zoom/zoom.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script src="plugin/math/math.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+        margin: 0.01,
+        width: 1920,
+        height: 1080,
+        maxScale: 4,
+        center: false,
+        slideNumber: 'c/t',
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+    });
+
+    // based on https://github.com/hakimel/reveal.js/issues/1211
+    Reveal.addEventListener("ready", function addFragmentToLists() {
+        for (const listItem of document.querySelectorAll(".fragmented-lists li")) {
+            listItem.classList.add("fragment");
+        }
+    });
+</script>
+</body>
+</html>
