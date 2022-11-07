@@ -126,7 +126,34 @@ sbt:Scala 101 Full Course> ~compile
 
 ===
 ## Sbt with VSCode
-TODO: Add info on setup
+* VSCode supports scala via an extension from Scalameta, called scalameta language server, or Metals
+  * Rich IDE features (completions, GOTO, import build, etc.)
+  * No sbt built-in
+    * sbt commands are run from Terminal instead
+
+==
+## Import a build
+* The first time you open Metals in a new workspace, it prompts you to import the build.
+  * This is "vanilla" indexing like IntelliJ
+  * Click "Import build" to start the installation step.
+  
+
+<img src="/scala101/images/2022-11-07-21-42-39.png" class="center" style="width:750px"/>
+
+* You can manually import a build from Command Palette (`Cmd + Shift + P`)
+  
+<img src="/scala101/images/2022-11-07-21-54-28.png" class="center" style="width:400px;"/>
+
+==
+## Run code
+* Once import successful, you can run the application via the UI. 
+* A launching point of the application must be either
+  * an object that extends the `App` trait
+  * an object with a properly defined `main` method
+
+<img src="/scala101/images/2022-11-07-22-05-42.png" class="center" style="width:400px;"/>
+
+* Otherwise, launch an sbt instance from Terminal and run commands from there
 
 ===
 ## ScalaTest
