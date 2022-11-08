@@ -213,21 +213,9 @@ val todo = ???
 <!-- .slide: data-background-color="#002b00" -->
 <img src="/scala101/images/exercise.png" class="slideLabel"/>
 
-## Preparing for exercises
-* Set up an IDE (IntellIJ is preferred, MetaLS/VSCode is possible)
-  * IntellIJ: install/activate Scala plugin
-  * MetaLS/VSCode: ???
-* Set up sbt
-  * Mac: `brew install sbt`
-  * W10: https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Windows.html
-
-===
-<!-- .slide: data-background-color="#002b00" -->
-<img src="/scala101/images/exercise.png" class="slideLabel"/>
-
 ## Excercise 1: the basics
 * Open a new Scala worksheet
-    * IntellIJ: File->New->Scala Worksheet
+    * File->New->Scala Worksheet
 * Experiment!
 * Press the green arrow to "run" the worksheet
 * Observe the results
