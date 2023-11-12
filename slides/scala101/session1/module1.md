@@ -122,9 +122,9 @@ s contains "e"      // infix notation of same call
 * Never use infix notation for side-effecting calls
 
 ```scala
-dates add new LocalDate(2002, 9, 11) // DON'T DO THIS
+dates add LocalDate.of(2002, 9, 11) // DON'T DO THIS
 
-dates.add(new LocalDate(2022, 10, 25)) // Correct
+dates.add(LocalDate.of(2022, 10, 25)) // Correct
 ```
 
 ==
