@@ -75,11 +75,12 @@ What differences do you spot compared to Java?
 
 ```scala
 import java.util.ArrayList
+import java.time.LocalDate
 
 val dates = new ArrayList[LocalDate]
 
-dates.add( new LocalDate(2022, 10, 25))
-dates.add( new LocalDate(1999, 12, 31))
+dates.add(LocalDate.of(2022, 10, 25))
+dates.add(LocalDate.of(1999, 12, 31))
 
 println(dates.size)
 ```
